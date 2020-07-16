@@ -9,3 +9,7 @@ class Inputs:
 
     # Asserts text
     assert_invalid_credentials = 'Invalid credentials'
+
+    # Test Job
+    job_title = 'QA Lead'
+    job_description = 'Manager of QA team'
