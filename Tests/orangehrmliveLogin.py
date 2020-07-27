@@ -16,10 +16,12 @@ class OrangeHrmLiveLogin(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         option = Options()
-        option.add_argument('--window-size=1920,1080')
-        # option.add_argument('--start-maximized')
-        option.add_argument('incognito')
+        # option.add_argument('--window-size=1920,1080')
+        option.add_argument('--start-maximized')
+        # option.add_argument('incognito')
         # option.add_argument('--headless')
+        # option.add_argument("--disable-gpu")
+        # option.add_argument("--verbose")
         cls.driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=option)
         cls.driver.implicitly_wait(5)
         cls.login = LoginPage(cls.driver)
