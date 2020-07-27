@@ -6,7 +6,6 @@ from Pages.loginPage import LoginPage
 from Pages.homePage import HomePage
 from Pages.jobTitlesPage import JobTitlesPage
 from Locators.inputs import Inputs
-from time import sleep
 
 import HtmlTestRunner
 import unittest
@@ -85,7 +84,7 @@ class OrangeHrmLiveLogin(unittest.TestCase):
         self.login.click_login()
 
         message = self.login.check_invalid_message()
-        self.assertEqual(message, Inputs.assert_invalid_credentials)
+        self.assertEqual(message, Inputs.assert_invalid_credentials, Inputs.assert_invalid_credentials_message)
 
     # @unittest.skip('test')
     def test_login_invalid_password(self):
@@ -96,7 +95,7 @@ class OrangeHrmLiveLogin(unittest.TestCase):
         self.login.click_login()
 
         message = self.login.check_invalid_message()
-        self.assertEqual(message, Inputs.assert_invalid_credentials)
+        self.assertEqual(message, Inputs.assert_invalid_credentials, Inputs.assert_invalid_credentials_message)
 
     @classmethod
     def tearDownClass(cls) -> None:
