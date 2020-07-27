@@ -15,5 +15,4 @@ class Inputs:
     job_description = 'Manager of QA team'
 
     # Messages
-
     assert_invalid_credentials_message = 'This is an unexpected message'

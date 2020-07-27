@@ -37,7 +37,7 @@ class OrangeHrmLiveLogin(unittest.TestCase):
         self.home.validate_welcome()
         self.home.click_logout()
 
-    # @unittest.skip('test')
+    @unittest.skip('test')
     def test_create_new_job(self):
         self.driver.get(Inputs.orangehrmlive_url)
 
@@ -57,6 +57,7 @@ class OrangeHrmLiveLogin(unittest.TestCase):
         self.home.validate_welcome()
         self.home.click_logout()
 
+    @unittest.skip('test')
     def test_delete_new_job(self):
         self.driver.get(Inputs.orangehrmlive_url)
 
@@ -75,7 +76,7 @@ class OrangeHrmLiveLogin(unittest.TestCase):
         self.home.validate_welcome()
         self.home.click_logout()
 
-    # @unittest.skip('test')
+    @unittest.skip('test')
     def test_login_invalid_user(self):
         self.driver.get(Inputs.orangehrmlive_url)
 
@@ -86,7 +87,7 @@ class OrangeHrmLiveLogin(unittest.TestCase):
         message = self.login.check_invalid_message()
         self.assertEqual(message, Inputs.assert_invalid_credentials, Inputs.assert_invalid_credentials_message)
 
-    # @unittest.skip('test')
+    @unittest.skip('test')
     def test_login_invalid_password(self):
         self.driver.get(Inputs.orangehrmlive_url)
 

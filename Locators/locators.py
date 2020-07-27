@@ -18,7 +18,7 @@ class Locators:
     job_title_textbox_id = 'jobTitle_jobTitle'
     job_description_textbox_id = 'jobTitle_jobDescription'
     save_job_button_id = 'btnSave'
-    tittle_results_xpath = '//*[@id="resultTable"]/tbody/tr/td[2]'
+    title_results_xpath = '//*[@id="resultTable"]/tbody/tr/td[2]'
     delete_button_id = 'btnDelete'
     confirm_delete_button_id = 'dialogDeleteBtn'
 
