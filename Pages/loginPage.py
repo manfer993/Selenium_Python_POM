@@ -1,26 +1,23 @@
-from Locators.locators import Locators
-from selenium.webdriver.common.by import By
+from Utils.locators import *
+from Pages.basePage import BasePage
 
 
-class LoginPage:
+class LoginPage(BasePage):
 
     def __init__(self, driver):
-        self.driver = driver
-        self.username_textbox = (By.ID, Locators.username_textbox_id)
-        self.password_textbox = (By.ID, Locators.password_textbox_id)
-        self.login_button = (By.ID, Locators.login_button_id)
-        self.invalidUsername_message = (By.ID, Locators.invalidUsername_message_id)
+        super(LoginPage, self).__init__(driver)
+        self.locator = LoginPageLocators
 
     def enter_username(self, username):
-        self.driver.find_element(*self.username_textbox).clear()
-        self.driver.find_element(*self.username_textbox).send_keys(username)
+        self.clear_text(*self.locator.username_textbox_id)
+        self.send_text(username, *self.locator.username_textbox_id)
 
     def enter_password(self, password):
-        self.driver.find_element(*self.password_textbox).clear()
-        self.driver.find_element(*self.password_textbox).send_keys(password)
+        self.clear_text(*self.locator.password_textbox_id)
+        self.send_text(password, *self.locator.password_textbox_id)
 
     def click_login(self):
-        self.driver.find_element(*self.login_button).click()
+        self.click(*self.locator.login_button_id)
 
     def check_invalid_message(self):
-        return self.driver.find_element(*self.invalidUsername_message).text
+        return self.get_text(*self.locator.invalidUsername_message_id)
